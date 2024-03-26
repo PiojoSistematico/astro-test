@@ -1,4 +1,8 @@
 ---
+import Footer from '../components/Footer.astro';
+import Header from '../components/Header.astro';
+import Navigation from '../components/Navigation.astro';
+
 interface Props {
 	title: string;
 }
@@ -17,8 +21,12 @@ const { title } = Astro.props;
 		<title>{title}</title>
 	</head>
 	<body>
-		<header><nav><a href="/">Home</a>
-			<a href="/about/">About</a><a href="/blog/">Blog</a></nav></header>
+		<Header></Header>
 		<slot />
+		<Footer></Footer>
+		
+		<script>
+			import "../scripts/menu.js";
+		  </script>
 	</body>
 </html>
